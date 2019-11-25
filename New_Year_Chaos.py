@@ -1,5 +1,5 @@
 """
-Question Link:
+Question link:
 https://www.hackerrank.com/challenges/new-year-chaos/problem
 """
 
