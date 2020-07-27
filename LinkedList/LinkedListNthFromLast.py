@@ -59,7 +59,7 @@ def nthfromlast(start, n):
 
     # This occurs if length of list is less than n
     if n > 0:
-        return -1
+        return
 
     # Traverse both pointers until one of them is null
     # This will ensure that the other pointer is n steps away from the last
@@ -108,4 +108,7 @@ if __name__ == '__main__':
     val = nthfromlast(start, nth)
 
     # Output the value
-    print("element no. {} from last is {}".format(nth, val))
+    if val == None:
+        print("The node doesn't exist.")
+    else:
+        print("element no. {} from last is {}".format(nth, val))
