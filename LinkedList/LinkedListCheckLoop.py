@@ -2,6 +2,9 @@
 This file contains code to check if the linked list contains any loop
 """
 
+# Import random integer from random module
+from random import randint
+
 # Class for the list nodes
 # Each node will be an object of this class
 class ListNode:
@@ -40,6 +43,7 @@ def insert(start, value):
 
     return start
 
+# This function if called, creates a loop in the linked list
 def initiateloop(start):
 
     curr = start
@@ -47,7 +51,7 @@ def initiateloop(start):
     while curr.next:
         curr = curr.next
 
-    curr.next = start.next
+    curr.next = start
 
     return start
 
@@ -83,19 +87,6 @@ def loopCheck(start):
     # Return status of list: looped/unlooped
     return flag
 
-# Function to print the entire list
-def printlist(start):
-
-    curr = start
-
-    while curr:
-
-        print(curr.data, end = ' ')
-
-        curr = curr.next
-
-    print()
-
 # The driver code
 if __name__ == '__main__':
 
@@ -110,15 +101,25 @@ if __name__ == '__main__':
 
         start = insert(start, int(input()))
 
-    # Looping created
-    start = initiateloop(start)
+    # Looping created/not created randomly
+    ran = randint(0,1)
+
+    if ran == 1:
+        
+        start = initiateloop(start)
+        
+        print("List will have looping.")
+
+    else:
+
+        print("List will not have looping.")
 
     #Call the function to get the value
     if loopCheck(start):
 
-        print("Loop exists")
+        print("Our function says: Loop exists in the list")
 
     else:
 
-        print("Loop doesn't exist")
+        print("Our function says: Loop doesn't exist in the list")
 
