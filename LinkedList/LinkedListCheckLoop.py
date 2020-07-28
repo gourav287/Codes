@@ -46,12 +46,20 @@ def insert(start, value):
 # This function if called, creates a loop in the linked list
 def initiateloop(start):
 
+    if start == None:
+
+        print("List will not have looping.")
+
+        return start
+
     curr = start
 
     while curr.next:
         curr = curr.next
 
     curr.next = start
+
+    print("List will have looping")
 
     return start
 
@@ -107,8 +115,6 @@ if __name__ == '__main__':
     if ran == 1:
         
         start = initiateloop(start)
-        
-        print("List will have looping.")
 
     else:
 
