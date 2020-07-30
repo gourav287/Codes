@@ -1,3 +1,9 @@
+"""Program to remove nodes with duplicate values
+from an already sorted list
+
+The algorithm works in O(n) time
+"""
+
 # Class for the list nodes
 # Each node will be an object of this class
 class ListNode:
@@ -49,6 +55,43 @@ def printlist(start):
 
     print()
 
+"""
+This is the implementation of removing duplicate values from the list
+"""
+def RemoveDuplicates(start):
+
+    # No duplicates if length is less than 2
+    if start == None or start.next == None:
+
+        return start
+
+    backptr, forptr = start, start.next
+
+    while backptr:
+
+        # The last iteration when forptr is already None
+        if not forptr:
+
+            backptr.next = forptr
+
+            break
+
+        # Keep tracing set of all the duplicate data
+        if backptr.data == forptr.data:
+
+            forptr = forptr.next
+
+        # Directly skip all the nodes containing duplicate values
+        else:
+
+            backptr.next = forptr
+
+            backptr = forptr
+
+            forptr = forptr.next
+    
+    return start
+
 # The driver code
 if __name__ == '__main__':
 
@@ -64,4 +107,10 @@ if __name__ == '__main__':
         start = insert(start, int(input()))
 
     # Printing the linked list
+    printlist(start)
+
+    # Removing the duplicates
+    start = RemoveDuplicates(start)
+
+    # Printing the updated list with non duplicate values
     printlist(start)
