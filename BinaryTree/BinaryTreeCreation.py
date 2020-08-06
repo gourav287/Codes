@@ -86,8 +86,8 @@ def buildTree(root, val):
     return root
 
 
-# The driver code
-if __name__ == '__main__':
+# The main function
+def BinaryTree():
 
     # Input total number of nodes in the tree
     n = int(input())
@@ -103,5 +103,14 @@ if __name__ == '__main__':
 
         root = buildTree(root, v)
 
-    # Print the inorder traversal of the tree
+    return root
+
+# The driver code
+if __name__ == "__main__":
+
+    # Calling the BinaryTree function to input necessary parameters
+    # And create the tree
+    root = BinaryTree()
+
+    # Printing the tree
     printTree(root)

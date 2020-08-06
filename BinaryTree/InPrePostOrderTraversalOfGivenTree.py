@@ -6,7 +6,7 @@ The traversals are implemented recursively
 # Importing the already created code for tree creation
 # This lets us focus on the specific task in this file
 # Check file with the module name in the same folder
-from BinaryTreeCreation import *
+import BinaryTreeCreation as BTC
 
 # Implementation of inOrder traversal
 def inOrderRecursive(root):
@@ -57,22 +57,9 @@ def postOrderRecursive(root):
 # The driver code
 if __name__ == '__main__':
 
-    # Input total no of nodes of the tree
-    n = int(input())
-
-    # Input values of the nodes
-    vals = list(map(int, input().split()))
-
-    # Creating root node
-    root = None
-
-    # Iterating through each node
-    for v in vals:
-
-        # This predefined function (from module) builds the tree
-        # It takes values of list vals as min level order traversal of the tree
-        root = buildTree(root, v)
-
+    # Calling main function of the module, that creates the tree for us.
+    root = BTC.BinaryTree()
+    
     # Function to print Tree in inOrder traversal recursively
     print("\nInOrder Traversal:")
     inOrderRecursive(root)
