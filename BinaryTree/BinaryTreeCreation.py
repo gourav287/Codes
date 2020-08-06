@@ -89,7 +89,7 @@ def buildTree(root, val):
 # The driver code
 if __name__ == '__main__':
 
-    # Input length of list
+    # Input total number of nodes in the tree
     n = int(input())
 
     # Inputing the values of Binary Tree nodes
