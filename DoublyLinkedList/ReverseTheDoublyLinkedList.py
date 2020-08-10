@@ -78,28 +78,29 @@ def ReverseNode(start):
     # Check if list exists and has more than 1 elements else do nothing
     if start and start.next:
 
-        # Working with three pointers, previous, current and next
-        prev_node, cur_node, nex_node = None, start, start.next
+        # Initialize a pointer, initially pointing to the head of the list
+        cur_node = start
 
         # Traversing through the list
         while cur_node:
             
-            # Interchange current nodes prev and next pointers in 2 steps
-            cur_node.prev = cur_node.next
+            # Interchange current node's prev and next pointers in single step
+            cur_node.prev, cur_node.next = cur_node.next, cur_node.prev
 
-            cur_node.next = prev_node
+            # Move the pointer to next node if possible !
+            # We have used cur_node.prev because the references have
+            # been interchanged. Now prev is next and next is prev
+            if cur_node.prev:
+                
+                cur_node = cur_node.prev
 
-            # Move all the 3 pointers one step ahead to work on next node
-            prev_node = cur_node
-            
-            cur_node = nex_node
+            # Else break loop if at the last node already
+            else:
+                
+                break
 
-            if nex_node:
-
-                nex_node = nex_node.next
-
-        # Assign head pointer to the last node which is now the first
-        start = prev_node
+        # Assign head pointer to the last node which is now the first one
+        start = cur_node
 
     # Return head pointer
     return start
