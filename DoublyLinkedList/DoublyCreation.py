@@ -55,8 +55,7 @@ class LinkedList:
         
         curr = self.head
 
-        # Printing the list in forward order
-        print("Forward:")
+        # Printing the list
 
         while curr:
 
@@ -64,26 +63,10 @@ class LinkedList:
 
             curr = curr.next
 
-        # Printing the list in backward order
-        print("\nBackward:")
-
-        # Traverse to the last node
-        curr = self.head
-
-        while curr.next:
-
-            curr = curr.next
-         # Start traversing back to first while printing each value
-        while curr:
-
-            print(curr.data, end = " ")
-
-            curr = curr.prev
-
         print()
 
-# The driver code
-if __name__ == '__main__':
+# The main function to create Doubly Linked List and return it's head pointer
+def DoublyLinkedList():
 
     # Input length of the list
     n = int(input())
@@ -97,6 +80,16 @@ if __name__ == '__main__':
         val = int(input())
 
         start.push(val)
+
+    # Returning the head pointer of doubly linked list
+    return start
+
+
+# The driver code
+if __name__ == '__main__':
+
+    # Calling the function to create the doubly linked list
+    start = DoublyLinkedList()
 
     # Print the entire list
     start.printlist()
