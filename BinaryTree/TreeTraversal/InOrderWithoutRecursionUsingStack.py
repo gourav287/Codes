@@ -11,7 +11,7 @@ sys.path.append('../')
 # Importing the already created code for tree creation
 # This lets us focus on the specific task in this file
 # Check folder with the module name in the parent folder
-import TreeCreation.BinaryTreeCreation as BTC
+import TreeCreation.SimpleBinaryTree as SBT
 
 """
 InOrder Traversal through stack
@@ -60,7 +60,7 @@ def InOrderByStack(root):
 if __name__ == "__main__":
 
     # Creating the simple Binary Tree
-    root = BTC.BinaryTree()
+    root = SBT.BinaryTree()
 
     # Calling function to traverse inOrder iterativey using stack
     InOrderByStack(root)

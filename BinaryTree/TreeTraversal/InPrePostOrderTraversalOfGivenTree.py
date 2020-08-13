@@ -11,7 +11,7 @@ sys.path.append('../')
 # Importing the already created code for tree creation
 # This lets us focus on the specific task in this file
 # Check folder with the module name in the parent folder
-import TreeCreation.BinaryTreeCreation as BTC
+import TreeCreation.SimpleBinaryTree as SBT
 
 # Implementation of inOrder traversal
 def inOrderRecursive(root):
@@ -63,7 +63,7 @@ def postOrderRecursive(root):
 if __name__ == '__main__':
 
     # Calling main function of the module, that creates the tree for us.
-    root = BTC.BinaryTree()
+    root = SBT.BinaryTree()
     
     # Function to print Tree in inOrder traversal recursively
     print("\nInOrder Traversal:")

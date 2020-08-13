@@ -2,4 +2,4 @@
 # that will let us use BinaryTreeCreation file
 # as a module in other folders
 
-from .BinaryTreeCreation import *
+from .SimpleBinaryTree import *

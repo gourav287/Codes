@@ -17,7 +17,7 @@ sys.path.append('../')
 # Importing the already created code for tree creation
 # This lets us focus on the specific task in this file
 # Check folder with the module name in the parent folder
-import TreeCreation.BinaryTreeCreation as BTC
+import TreeCreation.SimpleBinaryTree as SBT
 
 """
 PreOrder Traversal through Morris traversal
@@ -74,7 +74,7 @@ def PreOrderByMorris(root):
 if __name__ == "__main__":
 
     # Creating the simple Binary Tree
-    root = BTC.BinaryTree()
+    root = SBT.BinaryTree()
 
     # Calling function to traverse PreOrder iterativey using stack
     PreOrderByMorris(root)
