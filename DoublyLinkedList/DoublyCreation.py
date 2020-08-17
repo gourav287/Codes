@@ -55,6 +55,12 @@ class LinkedList:
         
         curr = self.head
 
+        if curr == None:
+
+            print("List is empty")
+
+            return
+
         # Printing the list
 
         while curr:
