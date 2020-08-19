@@ -20,31 +20,22 @@ import TreeCreation.SimpleBinaryTree as SBT
 """
 Function to check if any path contains the given sum
 """
-def isPath(root, n, csum):
+def isPath(root, n):
 
-    # If we crossed the leaf node, just check for sum
+    # If the node DNE and required remaining sum diminishes
+    if not root and n == 0:
+
+        return True
+
+    # If node DNE but sum is still left
     if not root:
 
-        if n == csum:
-
-            return True
-
-        else:
-
-            return False
-
+        return False
+    
     val = int(root.data)
 
-    # Traverse to left child
-    flag = isPath(root.left, n, csum + val)
-
-    # Traverse to right child if left could not give required sum
-    if not flag:
-        
-        flag = isPath(root.right, n, csum + val)
-
-    # Return if the path required is found or not
-    return flag
+    # Traverse to both children and return True if any of them returns true
+    return isPath(root.left, n - val) or isPath(root.right, n - val)
 
 # The driver code
 if __name__ == "__main__":
@@ -56,13 +47,13 @@ if __name__ == "__main__":
     n = int(input())
     
     # Check if the tree has a path from root to leaf adding upto n
-    path = isPath(root, n, 0)
+    path = isPath(root, n)
     
     # Print if the path exist or not
     if path:
 
-        print("Yes the path exist")
+        print("Yes the path exists.")
 
     else:
 
-        print("No the path does not exist")
+        print("No the path does not exist.")
